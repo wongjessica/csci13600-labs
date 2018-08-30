@@ -17,11 +17,11 @@ int main() {
     int user_input1;
     int user_input2;
 
-    cout << "I will be telling you which of two integers you input is the smaller integer\nPlease input the first integer";
+    cout << "Enter the first number:";
 
     cin >> user_input1;
 
-    cout << "Now the second integer";
+    cout << "Enter the second integer";
 
     cin >> user_input2;
 
