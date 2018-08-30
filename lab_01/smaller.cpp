@@ -12,15 +12,25 @@ describe what the program does.
 #include <iostream>
 using namespace std;
 
-class smaller {
+int main() {
 
     int user_input1;
     int user_input2;
 
-    cout << "I will be telling you which of two integers you input is the smaller integer\nPlease input the first integer" << endl;
+    cout << "I will be telling you which of two integers you input is the smaller integer\nPlease input the first integer";
 
     cin >> user_input1;
 
+    cout << "Now the second integer";
+
+    cin >> user_input2;
+
+    if(user_input1>user_input2) {
+        cout << "The smaller of the two is " << user_input2;
+    }
+    else {
+        cout << "The smaller of the two is " << user_input1;
+    }
     return 0;
 
-};
+}
