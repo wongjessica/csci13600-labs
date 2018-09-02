@@ -4,8 +4,7 @@ Course: CSCI-136
 Instructor: Maryash / Zamansky
 Assignment: Lab1A
 
-Here, briefly, at least in one or a few sentences
-describe what the program does.
+This code will determine the smaller integer of 2 integers the person inputs.
 */
 
 #include "smaller.h"
@@ -17,11 +16,11 @@ int main() {
     int user_input1;
     int user_input2;
 
-    cout << "Enter the first number:";
+    cout << "Enter the first number:    ";
 
     cin >> user_input1;
 
-    cout << "Enter the second integer";
+    cout << "Enter the second number: ";
 
     cin >> user_input2;
 
@@ -31,6 +30,7 @@ int main() {
     else {
         cout << "The smaller of the two is " << user_input1;
     }
+    
     return 0;
 
 }
