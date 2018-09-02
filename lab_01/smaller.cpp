@@ -16,7 +16,7 @@ int main() {
     int user_input1;
     int user_input2;
 
-    cout << "Enter the first number:    ";
+    cout << "Enter the first number: ";
 
     cin >> user_input1;
 
@@ -30,7 +30,7 @@ int main() {
     else {
         cout << "The smaller of the two is " << user_input1;
     }
-    
+
     return 0;
 
 }
