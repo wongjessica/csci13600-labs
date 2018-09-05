@@ -7,6 +7,7 @@ Assignment: Lab1D
 This code allows the user to input a year and a month, the will tell the user how many days in that month
  */
 
+#include "month.h"
 #include <iostream>
 using namespace std;
 
