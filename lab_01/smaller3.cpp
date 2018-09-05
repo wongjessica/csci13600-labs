@@ -7,6 +7,7 @@
     This code will determine the smaller of 3 integers, inputted by user
     */
 
+    #include "smaller3.h"
     #include <iostream>
     using namespace std;
 
