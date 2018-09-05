@@ -8,6 +8,8 @@ This code will determine whether or not the user input is a common year, or leap
 */
 
 #include <iostream>
+#include "leap.h"
+
 using namespace std;
 
 int main() {
