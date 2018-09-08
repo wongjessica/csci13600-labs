@@ -7,7 +7,6 @@ Assignment: Lab1A
 This code will determine the smaller integer of 2 integers the person inputs.
 */
 
-#include "smaller.h"
 #include <iostream>
 using namespace std;
 
