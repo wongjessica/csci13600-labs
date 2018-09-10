@@ -2,7 +2,7 @@
 Author: Jessica Wong
 Course: CSCI-136
 Instructor: Zamansky / Maryash
-Assignment: Lab2A
+Assignment: Lab2B
 
 The program print-interval.cpp allows the user to enter two integers. Then the numbers between the integers
  will be printed out, ending at the largest integer less than U (the second number inputted)
