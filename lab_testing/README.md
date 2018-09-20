@@ -1,2 +1,1 @@
-Lab Partner: Jasper Cheung<br>
-_our code might not be identical yikes_
+Jessica Wong and Jasper Cheung
