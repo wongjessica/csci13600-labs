@@ -7,7 +7,7 @@ pig.o: pig.h pig.cpp #pig.o is dependent on pig.cpp and pig.h
 tests: pigs.o tests.o
        g++ -o tests pig.o tests.o
        
-tests.o: tests.cpp
+tests.o: tests.cpp #tests.o is dependent on tests.cpp
          g++ -c tests.cpp
          
 main.o: main.cpp pig.h
