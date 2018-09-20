@@ -1,4 +1,3 @@
-string piglatinify(string){
-// function would go here
-
+string piglatinify(string word){
+  return " " ;
 }
