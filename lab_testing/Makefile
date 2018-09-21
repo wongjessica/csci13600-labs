@@ -1,17 +1,13 @@
-main: main.o pig.o
-      g++ -o main main.o pig.o
+CXXFLAGS=-std=c++11
 
-pig.o: pig.h pig.cpp #pig.o is dependent on pig.cpp and pig.h
-       g++ -c pig.cpp
+tests: tests.o pig.o 
+	g++ -o tests tests.o pig.o
 
-tests: pigs.o tests.o
-       g++ -o tests pig.o tests.o
-       
-tests.o: tests.cpp #tests.o is dependent on tests.cpp
-         g++ -c tests.cpp
-         
-main.o: main.cpp pig.h
-        g++ -c main.cpp
-        
+pig.o: pig.cpp pig.h
+	g++ $(CXXFLAGS) -c pig.cpp
+
+tests.o: tests.cpp
+	g++ $(CXXFLAGS) -c tests.cpp
+
 clean:
-        rm -f pig.o tests.o main.o
+	rm -f main.o pig.o tests.o 
