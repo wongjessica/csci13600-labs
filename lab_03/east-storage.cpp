@@ -11,6 +11,7 @@ The program east-storage.cpp asks the user to input a string representing the da
 #include <climits>
 #include <fstream>
 #include <string>
+#include east-storage.h
 using namespace std;
 
 int main()
