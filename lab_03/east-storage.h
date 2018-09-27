@@ -4,4 +4,4 @@
 #include <fstream>
 #include <string>
 
-double east-storage(std::string);
+double east_storage(std::string);
