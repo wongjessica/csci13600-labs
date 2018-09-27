@@ -23,6 +23,9 @@ string compare(string date1, string date2)
     }
 
     string junk, date;
+    string east = "East";
+    string west = "West";
+    string equal = "Equal";
     double eastSt, eastEl, westSt, westEl;
     getline(fin, junk);    //reads the first line and stores it in junk
 
@@ -41,13 +44,13 @@ string compare(string date1, string date2)
     	if (destination)
     	{
             if(eastEl > westEl) {
-                cout << date << " East\n";
+                return east;
             }
             else if(westEl > eastEl) {
-                cout << date << " West\n";
+                return west;
             }
             else {
-                cout << date << " Equal\n";
+                return equal;
             }
     	}
     	if (date2 == date && destination)
