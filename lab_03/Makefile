@@ -8,7 +8,13 @@ east-storage.o: east-storage.cpp east-storage.h
 
 minmax.o: minmax.cpp minmax.h
 	g++ $(CXXFLAGS) -c minmax.cpp
-
+	
+reverse-order.o: reverse-order.cpp reverse-order.h
+	g++ $(CXXFLAGS) -c reverse-order.cpp
+	
+compare.o: compare.cpp compare.h
+	g++ $(CXXFLAGS) -c compare.cpp	
+	
 tests.o: tests.cpp
 	g++ $(CXXFLAGS) -c tests.cpp
 
