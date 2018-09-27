@@ -14,8 +14,7 @@ The program east-storage.cpp asks the user to input a string representing the da
 #include east-storage.h
 using namespace std;
 
-int main()
-{
+double east_storage(string s){
     ifstream fin("Current_Reservoir_Levels.tsv"); //opens input file stream
     if (fin.fail())
     {
@@ -23,23 +22,18 @@ int main()
         exit(1); //exits if failed to open file
     }
 
-    string junk, date, userDate;
+    string junk, date;
     double eastSt, eastEl, westSt, westEl;
     getline(fin, junk);    //reads the first line and stores it in junk
-
-    cout << "Enter a date: ";
-    cin >> userDate;    //allows user to input date
 
     while (fin >> date >> eastSt >> eastEl >> westSt >> westEl) //reads the file line by line
     {
         fin.ignore(INT_MAX, '\n');    //skips to the end of the line
-        if (userDate == date)        //checks if the date entered by user matches with what's being read
+        if (s == date)        //checks if the date entered by user matches with what's being read
         {
-            cout << "East basin storage: " << eastSt << " billion gallons";
+            return eastSt;
             break;    //breaks out of loop
         }
     }
-
     fin.close();    //closes file
-    return 0;
 }
