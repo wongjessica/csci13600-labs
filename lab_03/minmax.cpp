@@ -11,6 +11,7 @@ The program minmax.cpp outputs the minimum and maximum storage in East basin in 
 #include <climits>
 #include <fstream>
 #include <string>
+#include minmax.h
 using namespace std;
 
 double min_storage() {
