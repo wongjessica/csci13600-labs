@@ -6,7 +6,7 @@
 #include "compare.h"
 
 TEST_CASE("Dates"){
-  CHECK(east_storage("05/20/2016")== 79.88);
+  CHECK(east_storage("05/20/2016") == 79.88);
 }
 
 TEST_CASE("Invalid"){
