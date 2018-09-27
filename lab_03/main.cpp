@@ -15,6 +15,11 @@ int main()
   storage = east_storage(date);
   std::cout << storage << " billion gallons" << std::endl;
   
+  double minimum = min_storage(); 
+  double maximum = max_storage();
+  
+  std::cout << "Minimum storage in east basin: " << minimum << " billion gallons" << std::endl;
+  std::cout << "Maximum storage in east basin: " << maximum << " billion gallons" << std::endl;
   
   return 0;
 }
