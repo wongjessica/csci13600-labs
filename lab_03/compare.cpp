@@ -3,7 +3,7 @@ Author: Jessica Wong
 Course: CSCI-136
 Instructor: Zamansky / Maryash
 Assignment: Lab3C
-The program compare.cpp asks the user to input two dates and reports which basin had higher elevation on that day by printing “East” or “West”, or print “Equal” if both basins are at the same level.
+The program compare.cpp asks the user to input two dates and reports which basin had higher elevation on that day by printing â€œEastâ€ or â€œWestâ€, or print â€œEqualâ€ if both basins are at the same level.
 */
 
 #include <iostream>
@@ -11,7 +11,6 @@ The program compare.cpp asks the user to input two dates and reports which basin
 #include <climits>
 #include <fstream>
 #include <string>
-#include compare.h
 using namespace std;
 
 string compare(string date1, string date2)
@@ -23,42 +22,39 @@ string compare(string date1, string date2)
         exit(1); //exits if failed to open file
     }
 
-    string junk, date;
-    string east = "East";
-    string west = "West";
-    string equal = "Equal";
+    string junk, date, date1, date2;
     double eastSt, eastEl, westSt, westEl;
     getline(fin, junk);    //reads the first line and stores it in junk
 
-    cout << "Enter starting date: ";
-    cin >> date1;    //allows user to input starting date
-    cout << "Enter ending date: ";
-    cin >> date2;    //allows user to input ending date
-
     bool destination = false;
+    string str;
     while (fin >> date >> eastSt >> eastEl >> westSt >> westEl)
     {
-    	if (date1 == date && !destination)
-    	{
+        if (date1 == date && !destination)
+        {
         destination = true;
-    	}
-    	if (destination)
-    	{
+        }
+        if (destination)
+        {
             if(eastEl > westEl) {
-                return east;
+                str.append(date);
+                str.append("East\n");
             }
             else if(westEl > eastEl) {
-                return west;
+                str.append(date);
+                str.append"West\n");
             }
             else {
-                return equal;
+                str.append(date);
+                str.append("Equal\n");
             }
-    	}
-    	if (date2 == date && destination)
-    	{
+        }
+        if (date2 == date && destination)
+        {
         break;
-    	}
+        }
     }
 
     fin.close();    //closes file
+    return str;
 }
