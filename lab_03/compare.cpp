@@ -11,6 +11,7 @@ The program compare.cpp asks the user to input two dates and reports which basin
 #include <climits>
 #include <fstream>
 #include <string>
+#include compare.h
 using namespace std;
 
 string compare(string date1, string date2)
