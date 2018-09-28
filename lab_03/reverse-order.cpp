@@ -15,7 +15,7 @@ order (from the later date to the earlier).
 #include <string>
 using namespace std;
 
-int main()
+string reverse(string date1, string date2)
 {
     ifstream fin("Current_Reservoir_Levels.tsv"); //opens input file stream
     if (fin.fail())
@@ -24,13 +24,13 @@ int main()
         exit(1); //exits if failed to open file
     }
 
-    string junk, date, firstDate, secDate;
+    string junk, date;
     double eastSt, eastEl, westSt, westEl;
 
     cout << "Enter earlier date: ";
-    cin >> firstDate;    //allows user to input starting date
+    cin >> date1;    //allows user to input starting date
     cout << "Enter later date: ";
-    cin >> secDate;    //allows user to input ending date
+    cin >> date2;    //allows user to input ending date
     
     int size = -1;
     while (getline(fin, junk))
@@ -55,7 +55,7 @@ int main()
     bool destination = false;
     for (int i = count-1; size >= 0; i--)
     {
-        if (secDate == westDate[i] && !destination)
+        if (date2 == westDate[i] && !destination)
         {
             destination = true;
         }
@@ -63,7 +63,7 @@ int main()
         {
             cout << westDate[i] << " " << westElevation[i] << "\n";
         }
-        if (firstDate == westDate[i] && destination)
+        if (date1 == westDate[i] && destination)
         {
             break;
         }
