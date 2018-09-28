@@ -40,7 +40,7 @@ string reverse(string date1, string date2)
     }
     fin.clear();
     fin.seekg(0, ios::beg);
-    
+        
     getline(fin,junk);
     
     int count = 0;
@@ -54,6 +54,7 @@ string reverse(string date1, string date2)
         count++;
     }
     bool destination = false;
+    string str;
     for (int i = count-1; size >= 0; i--)
     {
         if (date2 == westDate[i] && !destination)
@@ -62,7 +63,10 @@ string reverse(string date1, string date2)
         }
         if (destination)
         {
-            cout << westDate[i] << " " << westElevation[i] << "\n";
+            str.append(westDate[i]);
+            str.append(" ");
+            str.append(std::to_string(westElevation[i]));
+            str.append("\n");
         }
         if (date1 == westDate[i] && destination)
         {
@@ -71,5 +75,5 @@ string reverse(string date1, string date2)
     }
 
     fin.close();    //closes file
-    return 0;
+    return str;
 }
