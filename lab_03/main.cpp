@@ -24,10 +24,12 @@ int main()
   std::cout << "Minimum storage in east basin: " << minimum << " billion gallons" << std::endl;
   std::cout << "Maximum storage in east basin: " << maximum << " billion gallons" << std::endl;
   
-  string fDate, sDate;
-  string comp = compare(fDate, sDate);
-  
-  std::cout << fDate << comp << std::endl;
+  std::cout << "Enter starting date: " << std::endl;
+  std::cin >> date1;    //allows user to input starting date
+  std::cout << "Enter ending date: " << std::endl;
+  std::cin >> date2;    //allows user to input ending date
+  std::cout << compare(date1,date2) << std::endl;
+
   
   
   
