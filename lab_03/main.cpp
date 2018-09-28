@@ -30,6 +30,11 @@ int main()
   std::cin >> date2;    //allows user to input ending date
   std::cout << compare(date1,date2) << std::endl;
 
+  std::cout << "Enter earlier date: " << std::endl;
+  std::cin >> date1;    //allows user to input starting date
+  std::cout << "Enter later date: " << std::endl;
+  std::cin >> date2;    //allows user to input ending date
+  std::cout << reverse(date1,date2) << std::endl;
   
   
   
