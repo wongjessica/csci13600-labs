@@ -15,4 +15,5 @@ string lower(int length) {
     }
     str += "\n";
   }
+  return str;
 }
