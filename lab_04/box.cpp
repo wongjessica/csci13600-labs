@@ -9,10 +9,12 @@ box.cpp asks the user to input width and height and prints a solid rectangular b
 
 #include <iostream>
 
+string outp = "*";
+
 string box(int width, int height) {
     for (int y = 1; y <= width; y++) {
         for (int x = 1; x <= height; x++) {
-            std::cout << "*" << std::endl;
+            return outp;
         }
         std::cout << "\n" << std::endl;
     }
