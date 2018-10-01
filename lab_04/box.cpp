@@ -12,8 +12,8 @@ box.cpp asks the user to input width and height and prints a solid rectangular b
 string box(int width, int height) {
     for (int y = 1; y <= width; y++) {
         for (int x = 1; x <= height; x++) {
-            cout << "*" << endl;
+            std::cout << "*" << std::endl;
         }
-        cout << endl;
+        std::cout << std::endl;
     }
 }
