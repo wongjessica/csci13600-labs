@@ -16,6 +16,6 @@ string box(int width, int height) {
         for (int x = 1; x <= height; x++) {
             return outp;
         }
-        std::cout << "\n" << std::endl;
+        //std::cout << "\n" << std::endl;
     }
 }
