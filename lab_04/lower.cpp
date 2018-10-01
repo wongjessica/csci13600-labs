@@ -1,9 +1,9 @@
 string lower(int length) {
-  for(int i=0;    i<length;   i++){
-    printChar();
+  string str = "";
+  for(int i=0;    i<=length;   i++){
     for(int j=0;    j<i;    j++){
-      return '* ';
+      str += "*";
     }
-    std::cout << "\n" << std::endl;
+    str += "\n";
   }
 }
