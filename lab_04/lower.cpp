@@ -4,5 +4,6 @@ string lower(int length) {
     for(int j=0;    j<i;    j++){
       return '* ';
     }
+    std::cout << "\n" << std::endl;
   }
 }
