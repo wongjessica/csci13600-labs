@@ -4,4 +4,4 @@
 #include <fstream>
 #include <string>
 
-string box(std::string width, std::string height);
+string box(int width, int height);
