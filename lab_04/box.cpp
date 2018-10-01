@@ -9,7 +9,11 @@ box.cpp asks the user to input width and height and prints a solid rectangular b
 
 #include <iostream>
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+string box(int width, int height) {
+    for (int y = 1; y <= width; y++) {
+        for (int x = 1; x <= height; x++) {
+            cout << "*" << endl;
+        }
+        cout << endl;
+    }
 }
