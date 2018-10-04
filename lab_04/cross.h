@@ -1,7 +1,3 @@
-#include <iostream>
-#include <cstdlib>
-#include <climits>
-#include <fstream>
-#include <string>
+#pragma once
 
-string cross(int size);
+std::string cross(int size);
