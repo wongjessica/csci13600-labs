@@ -1,7 +1,3 @@
-#include <iostream>
-#include <cstdlib>
-#include <climits>
-#include <fstream>
-#include <string>
+#pragma once
 
-string trapezoid(int width, int height);
+std::string trapezoid(int width, int height);
