@@ -6,6 +6,12 @@ Assignment: Lab 4D
 */ 
 
 #include <iostream>
+#include "lower.h"
+
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
 
 string lower(int length) {
   string str = "";
