@@ -1,6 +1,9 @@
 #include <iostream>
 #include "cross.h"
 
+using std::cout;
+using std::cin;
+using std::endl;
 using std::string;
 
 string cross(int size) {
