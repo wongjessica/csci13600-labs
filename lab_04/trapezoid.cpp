@@ -1,4 +1,6 @@
 #include <iostream>
+#include "trapezoid.h"
+
 using std::string;
 
 string trapezoid(int width, int height){
