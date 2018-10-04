@@ -8,6 +8,12 @@ box.cpp asks the user to input width and height and prints a solid rectangular b
 */
 
 #include <iostream>
+#include "box.h"
+
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
 
 string box(int width, int height) {
     string outp = "";
