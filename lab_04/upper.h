@@ -1,7 +1,3 @@
-#include <iostream>
-#include <cstdlib>
-#include <climits>
-#include <fstream>
-#include <string>
+#pragma once
 
-string upper(int length);
+std::string upper(int length);
