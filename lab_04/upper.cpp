@@ -1,6 +1,9 @@
 #include <iostream>
 #include "upper.h"
 
+using std::cout;
+using std::cin;
+using std::endl;
 using std::string;
 
 string upper(int length) {
