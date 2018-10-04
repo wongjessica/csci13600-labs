@@ -1,7 +1,3 @@
-#include <iostream>
-#include <cstdlib>
-#include <climits>
-#include <fstream>
-#include <string>
+#pragma once
 
-string checkerboard(int width, int height);
+std::string checkerboard3x3(int width, int height);
