@@ -19,13 +19,13 @@ TEST_CASE("Base Cases"){
 }
 
 TEST_CASE("Random Cases"){
-	CHECK(box(4,6) == "****\n****\n****\n****\n****\n****\n");
-	CHECK(checkerboard(5,5) == "* * *\n * * \n* * *\n * * \n* * *\n");
-	CHECK(cross(7) == "*     *\n *   *\n  * *\n   *\n  * *\n *   *\n*     *\n");
-	CHECK(cross(6) == "*    *\n *  *\n  **\n  **\n *  *\n*    *\n");
-	CHECK(lower(5) == "*\n**\n***\n****\n*****\n");
-	CHECK(upper(5) == "*****\n ****\n  ***\n   **\n    *\n");
-	CHECK(trapezoid(8,3) == "********\n ******\n  ****\n");
+	CHECK(box(2,4) == "****\n****\n****\n****\n****\n****\n");
+	CHECK(checkerboard(3,3) == "* * *\n * * \n* * *\n * * \n* * *\n");
+	CHECK(cross(6) == "*     *\n *   *\n  * *\n   *\n  * *\n *   *\n*     *\n");
+	CHECK(cross(8) == "*    *\n *  *\n  **\n  **\n *  *\n*    *\n");
+	CHECK(lower(8) == "*\n**\n***\n****\n*****\n");
+	CHECK(upper(8) == "*****\n ****\n  ***\n   **\n    *\n");
+	CHECK(trapezoid(9,3) == "********\n ******\n  ****\n");
 	CHECK(trapezoid(3,8) == "Impossible shape!\n");
-	CHECK(checkerboard3x3(9,9) == "***   ***\n***   ***\n***   ***\n   ***   \n   ***   \n   ***   \n***   ***\n***   ***\n***   ***\n");
+	CHECK(checkerboard3x3(7,7) == "***   ***\n***   ***\n***   ***\n   ***   \n   ***   \n   ***   \n***   ***\n***   ***\n***   ***\n");
 }
