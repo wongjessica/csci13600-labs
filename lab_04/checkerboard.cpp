@@ -7,6 +7,12 @@ Assignment: Lab 4B
 */ 
 
 #include <iostream>
+#include "checkerboard.h"
+
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
 
 string box(int width, int height) {
     string outp = "* ";
