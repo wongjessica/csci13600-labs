@@ -8,6 +8,7 @@ checkerboard3x3.cpp takes in width/height, and outputs a 3x3 checkerboard
 */
 
 #include <iostream>
+#include "checkerboard3x3.h"
 
 using std::string;
 using std::cout;
