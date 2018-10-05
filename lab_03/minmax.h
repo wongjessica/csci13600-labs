@@ -1,8 +1,4 @@
-#include <iostream>
-#include <cstdlib>
-#include <climits>
-#include <fstream>
-#include <string>
+#pragma once
 
 double min_storage();
 double max_storage();
