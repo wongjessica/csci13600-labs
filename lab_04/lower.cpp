@@ -3,6 +3,8 @@ Author: Jessica Wong
 Course: CSCI-136
 Instructor: Zamansky / Maryash
 Assignment: Lab 4D
+
+lower.cpp returns a string representing the bottom-left half of a square
 */ 
 
 #include <iostream>
@@ -14,12 +16,9 @@ using std::endl;
 using std::string;
 
 string lower(int length) {
-  string str = "";
-  for(int i=0;    i<=length;   i++){
-    for(int j=0;    j<i;    j++){
-      str += "*";
-    }
-    str += "\n";
-  }
-  return str;
+	string outp = "";
+	for (int i = 1; i <= length; i++) {
+		outp += redo(i, "*");
+	}
+	return outp;
 }
