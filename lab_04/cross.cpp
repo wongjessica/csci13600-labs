@@ -2,7 +2,7 @@
 Author: Jessica Wong
 Course: CSCI-136
 Instructor: Zamansky
-Assignment: Lab 4c
+Assignment: Lab 4C
 cross.cpp takes as a parameter size, and returns a string representing a diagonal cross of that dimension.
 */
 
