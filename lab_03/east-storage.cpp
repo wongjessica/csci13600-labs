@@ -8,9 +8,8 @@ The program east-storage.cpp asks the user to input a string representing the da
 
 #include <iostream>
 #include <cstdlib>
-#include <climits>
 #include <fstream>
-#include <string>
+#include <vector>
 #include "east-storage.h"
 using namespace std;
 
