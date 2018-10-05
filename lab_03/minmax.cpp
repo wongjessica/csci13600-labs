@@ -18,7 +18,7 @@ double min_storage(){
 	
 	string date;
 	double min = 100.0;
-	double eastStorage, eastElevation, westStorage, westElevation;
+    	double eastSt, eastEl, westSt, westEl;
 	ifstream fin("Current_Reservoir_Levels.tsv");
 	if (fin.fail()) {
 		cerr << "File cannot be opened for reasons." << endl;
@@ -26,9 +26,9 @@ double min_storage(){
 	}
 	string junk;
 	getline(fin, junk); //reads the first line and stores it in junk
-	while(fin >> date >> eastStorage >> eastElevation >> westStorage >> westElevation) { //reads the file line by line
-		if(eastStorage < min) {
-			min = eastStorage;
+    	while (fin >> date >> eastSt >> eastEl >> westSt >> westEl) { //reads the file line by line
+		if(eastSt < min) {
+			min = eastSt;
 		}
 	}
 	fin.close();
@@ -39,7 +39,7 @@ double max_storage(){
 	
 	string date;
 	double max = 0.0;
-	double eastStorage, eastElevation, westStorage, westElevation;
+    	double eastSt, eastEl, westSt, westEl;
 	ifstream fin("Current_Reservoir_Levels.tsv");
 	if (fin.fail()) {
 		cerr << "File cannot be opened for reasons." << endl;
@@ -47,13 +47,13 @@ double max_storage(){
 	}
 	string junk;
 	getline(fin, junk); //reads the first line and stores it in junk	
-	while(fin >> date >> eastStorage >> eastElevation >> westStorage >> westElevation) { //reads the file line by line
+    	while (fin >> date >> eastSt >> eastEl >> westSt >> westEl) { //reads the file line by line
 		if (max == 0.0) {
-			max = eastStorage;
+			max = eastSt;
 			continue;
 		}
-		if(eastStorage > max) {
-			max = eastStorage;
+		if(eastSt > max) {
+			max = eastSt;
 		}
 	}
 	fin.close();
