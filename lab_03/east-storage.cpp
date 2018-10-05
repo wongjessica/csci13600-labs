@@ -1,7 +1,7 @@
 /*
 Author: Jessica Wong
 Course: CSCI-136
-Instructor: Zamansky / Maryash
+Instructor: Zamansky
 Assignment: Lab3A
 The program east-storage.cpp asks the user to input a string representing the date and prints out the east basin storage on that day
 */
@@ -28,12 +28,10 @@ double east_storage(string s){
 
     while (fin >> date >> eastSt >> eastEl >> westSt >> westEl) //reads the file line by line
     {
-        fin.ignore(INT_MAX, '\n');    //skips to the end of the line
         if (s == date)        //checks if the date entered by user matches with what's being read
         {
+            fin.close();    //closes file
             return eastSt;
-            break;    //breaks out of loop
         }
     }
-    fin.close();    //closes file
 }
