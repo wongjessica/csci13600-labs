@@ -25,16 +25,20 @@ int main()
   string date1,date2;
   std::cout << "Enter starting date: " << std::endl;
   std::cin >> date1;    //allows user to input starting date
+  std::cout << "\n";
   std::cout << "Enter ending date: " << std::endl;
   std::cin >> date2;    //allows user to input ending date
+  std::cout << "\n";
   std::cout << compare(date1,date2) << std::endl;
   
   
   string date3,date4;
   std::cout << "Enter earlier date: " << std::endl;
   std::cin >> date3;    //allows user to input starting date
+  std::cout << "\n";
   std::cout << "Enter later date: " << std::endl;
   std::cin >> date4;    //allows user to input ending date
+  std::cout << "\n";
   std::cout << reverse(date3,date4) << std::endl;
 
   return 0;
