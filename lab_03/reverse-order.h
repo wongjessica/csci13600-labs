@@ -1,7 +1,3 @@
-#include <iostream>
-#include <cstdlib>
-#include <climits>
-#include <fstream>
-#include <string>
+#pragma once
 
 std::string reverse(std::string date1, std::string date2);
