@@ -16,13 +16,17 @@ using std::cin;
 using std::endl;
 using std::string;
 
-string trapezoid(int width, int height){
+string trapezoid(int width, int height)
+{
 	string outp = "";
-	if (width/2 < height) {
+	if (width/2 < height) 
+	{
 		outp = "Impossible shape!\n";
 	}
-	else {
-		for (int i = 0; i < height; i++) {
+	else 
+	{
+		for (int i = 0; i < height; i++) 
+		{
 			int aster = width - (2 * i);
 			outp += redo(i, " ").substr(0, i);
 			outp += redo(aster, "*").substr(0, aster);
