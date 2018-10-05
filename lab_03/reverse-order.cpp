@@ -10,70 +10,33 @@ order (from the later date to the earlier).
 
 #include <iostream>
 #include <cstdlib>
-#include <climits>
 #include <fstream>
-#include <string>
-#include reverse-order.h
+#include <vector>
+#include "reverse-order.h"
 using namespace std;
 
 string reverse(string date1, string date2)
 {
-    ifstream fin("Current_Reservoir_Levels.tsv"); //opens input file stream
-    if (fin.fail())
-    {
-        cerr << "File cannot be opened for reasons." << endl;
-        exit(1); //exits if failed to open file
-    }
-
-    string junk, date;
+	string junk;
+	string rtn = "";
+	string date;
     double eastSt, eastEl, westSt, westEl;
-
-    cout << "Enter earlier date: ";
-    cin >> date1;    //allows user to input starting date
-    cout << "Enter later date: ";
-    cin >> date2;    //allows user to input ending date
+	ifstream fin("Current_Reservoir_Levels.tsv");
+	if (fin.fail()) {
+		cerr << "File cannot be opened for reasons." << endl;
+		exit(1); // exit if failed to open the file
+	}
     
-    int size = -1;
-    while (getline(fin, junk))
-    {
-        size++;
-    }
-    fin.clear();
-    fin.seekg(0, ios::beg);
-        
-    getline(fin,junk);
+	getline(fin, junk);
     
-    int count = 0;
-    string* westDate = new string[size];
-    double* westElevation = new double[size];
-    while (fin >> date >> eastSt >> eastEl >> westSt >> westEl)
+    while (fin >> date >> eastSt >> eastEl >> westSt >> westEl) 
     {
-        fin.ignore(INT_MAX, '\n');
-        westDate[count] = date;
-        westElevation[count] = westEl;
-        count++;
-    }
-    bool destination = false;
-    string str;
-    for (int i = count-1; size >= 0; i--)
-    {
-        if (date2 == westDate[i] && !destination)
+		if (date >= date1 && date <= date2) 
         {
-            destination = true;
-        }
-        if (destination)
-        {
-            str.append(westDate[i]);
-            str.append(" ");
-            str.append(std::to_string(westElevation[i]));
-            str.append("\n");
-        }
-        if (date1 == westDate[i] && destination)
-        {
-            break;
-        }
-    }
-
-    fin.close();    //closes file
-    return str;
+			string temp = date + " " + std::to_string(westElevation).substr(0,6) + " ft\n";
+			rtn.insert(0, temp);
+		}
+	}
+	fin.close();
+	return rtn;
 }
