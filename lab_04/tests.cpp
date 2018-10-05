@@ -48,7 +48,23 @@ TEST_CASE("Valid Cases"){
   ***\n
    **\n
     *\n");
-	CHECK(trapezoid(9,3) == "********\n ******\n  ****\n");
-	CHECK(trapezoid(3,8) == "Impossible shape!\n");
-	CHECK(checkerboard3x3(7,7) == "***   ***\n***   ***\n***   ***\n   ***   \n   ***   \n   ***   \n***   ***\n***   ***\n***   ***\n");
+	CHECK(trapezoid(12,5) == "
+************\n
+ **********\n
+  ********\n
+   ******\n
+    ****\n");
+	CHECK(trapezoid(12,7) == "Impossible shape!\n");
+	CHECK(checkerboard3x3(16,11) == "
+***   ***   ***\n
+***   ***   ***\n
+***   ***   ***\n
+   ***   ***   *\n
+   ***   ***   *\n
+   ***   ***   *\n
+***   ***   ***\n
+***   ***   ***\n
+***   ***   ***\n
+   ***   ***   *\n
+   ***   ***   *\n");
 }
