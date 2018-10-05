@@ -1,6 +1,6 @@
 /*
   Author: Jessica Wong
-  Course: CSCI-133
+  Course: CSCI-136
   Instructor: Zamansky
   Assignment: Lab4G
 
@@ -15,26 +15,24 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-string checkerboard3x3(int width, int height){
-  
-	string outp;
-	string aster = "*";
-	string start = "*"; 
-	
-	for (int r = 0; r < height; r++){
-    
-		if (r % 3 == 0) start == "*" ? start = " " : start = "*";
-    
-		aster = start;
-    
-		for (int c = 0; c < width; c++){
-      
-			//toggles character every third column
-			if (c % 3 == 0)	ch == "*" ? aster = " " : aster = "*";
-			outp += aster;
+string checkerboard3x3(int width, int height)
+{
+ 	string outp = "";
+	bool dest = true;
+	for (int i = 0; i < height; i++) 
+	{
+		if (dest) 
+		{
+			outp += redo2(width, "*", " ");
 		}
-		outp += "\n";
+		else 
+		{
+			outp += redo2(width, " ", "*");
+		}
+		if ((i + 1) % 3 == 0) 
+		{
+			dest = !dest;
+		}
 	}
-
 	return outp;
 }
