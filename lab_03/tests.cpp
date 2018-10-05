@@ -22,8 +22,8 @@ TEST_CASE("Valid Date Inputs"){
 }
 
 TEST_CASE("Valid"){
-  CHECK(min_storage() == 61.13);
-  CHECK(man_storage() == 69.22);
+	CHECK(min_storage() == 49.34);
+	CHECK(max_storage() == 81);
 }
 
 TEST_CASE("Invalid"){
