@@ -27,11 +27,6 @@ TEST_CASE("Valid"){
 }
 
 TEST_CASE("Invalid"){
-  CHECK(east_storage("") == -1);
-  CHECK(east_storage(5) == -1);
-  CHECK(east_storage("ploop" == -1);
-  CHECK(min_storage() != 61.13);
-  CHECK(man_storage() != 69.22);
   CHECK(compare(23) == "invalid input");
   CHECK(compare("") == "invalid input");
   CHECK(compare("43/34/6353","43/53/7353") == "invalid input. that's not a date");
