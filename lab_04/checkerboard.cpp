@@ -21,30 +21,30 @@ string checkerboard(int width, int height)
 	string outp;
     
 	for (int h = 0; h < height; h++) 
-    { 
+    	{ 
 		for (int w = 0; w < width; w = w + 2)
-        { 
+        	{ 
 			if (h % 2 == 0)
-            {
+           		{
 				if (w == width - 1) 
-                { 
-                    outp = outp + "*"; 
-                }
+                		{ 
+                   			outp = outp + "*"; 
+                		}
 				else 
-                { 
-                    outp = outp +  "* ";
-                }
+                		{ 
+                    			outp = outp +  "* ";
+               			}
 			}
 			else
-            {
+            		{
 				if (w == width - 1)
-                {
-                    outp += " "; 
-                }
+                		{
+                   			outp += " "; 
+                		}
 				else 
-                {
-                    outp += " *";
-                }
+               			{
+                    			outp += " *";
+                		}
 			}
 		}
 		outp += "\n";
