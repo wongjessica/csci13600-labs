@@ -1,3 +1,11 @@
+/*
+Author: Jessica Wong
+Course: CSCI-136
+Instructor: Zamansky
+Assignment: Lab 4c
+cross.cpp takes as a parameter size, and returns a string representing a diagonal cross of that dimension.
+*/
+
 #include <iostream>
 #include "cross.h"
 
@@ -7,17 +15,17 @@ using std::endl;
 using std::string;
 
 string cross(int size) {
-	std::string ans = "";
+	string outp = "";
 	for (int i = 0; i < size; i++) {
 		for (int j = 0; j < size; j++) {
 			if (j == i || j == (size - i - 1)) {
-				ans += "*";
+				outp += "*";
 			}
 			else {
-				ans += " ";
+				outp += " ";
 			}
 		}
-		ans += "\n";
+		outp += "\n";
 	}
-	return ans;
+	return outp;
 }
