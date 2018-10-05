@@ -8,9 +8,8 @@ The program minmax.cpp outputs the minimum and maximum storage in East basin in 
 
 #include <iostream>
 #include <cstdlib>
-#include <climits>
 #include <fstream>
-#include <string>
+#include <vector>
 #include "minmax.h"
 using namespace std;
 
