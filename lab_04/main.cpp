@@ -6,18 +6,58 @@
 #include "lower.h"
 #include "trapezoid.h"
 #include "checkerboard3x3.h"
+#include "redo.h"
+
+using std::cout;
+using std::cin;
+using std::endl;
 
 int main() {
-	std::cout << "\nTask A.Box\nInput width: 3\nInput height : 4\n\nShape:\n" << box(3, 4) << "\n";
-	std::cout << "Input width: 5\nInput height: 8\n\nShape:\n" << box(5,8) << "\n";
-	std::cout << "Task B.Checkerboard\nInput width: 18\nInput height : 9\n\nShape:\n" << checkerboard(18, 9) << "\n";
-	std::cout << "Task C.Cross\nInput size: 5\n\nShape:\n" << cross(5) << "\n";
-	std::cout << "Input size: 9\n\nShape:\n" << cross(9) << "\n";
-	std::cout << "Task D.Lower Triangle\nInput side length: 9\n\nShape:\n" << lower_triangle(9) << "\n";
-	std::cout << "Task E.Upper Triangle\nInput side length: 15\n\nShape:\n" << upper_triangle(15) << "\n";
-	std::cout << "Task F.Trapezoid\nInput width: 7\nInput height : 5\n\nShape:\n" << trapezoid(7, 5) << "\n";
-	std::cout << "Input width: 18\nInput height : 7\n\n" << trapezoid(18, 7) << "\n";
-	std::cout << "Task G.Checkerboard(3x3)\nInput width: 9\nInput height : 4\n\nShape:\n" << checkerboard3x3(9,4) << "\n";
-	std::cout << "Input width: 17\nInput height : 17\n\n" << checkerboard3x3(17,17);
+	
+	int box1, int box2;
+	cout << "\nEnter width(for box.cpp): ";
+	cin >> box1;
+	cout << "Enter height(for box.cpp): ";
+	cin >> box2;
+	cout << "\nShape: " << endl << box(box1, box2);
+	
+	int cb1, cb2;
+	cout << "\nEnter width(for checkerboard.cpp): ";
+	cin >> cb1;
+	cout << "Enter height(for checkerboard.cpp): ";
+	cin >> cb2;
+	cout << "\nShape: " << endl << checkerboard(cb1, cb2);
+	
+	int cro;
+	cout << "\nEnter length(for cross.cpp): ";
+	cin >> cro;
+	cout << "\nShape: " << endl << cross(cro);
+	
+	int lowe;
+	cout << "\nEnter height(for lower.cpp): ";
+	cin >> lowe;
+	cout << "\nShape: " << endl << lower(lowe);
+	
+	int upp;
+	cout << "\nEnter height: ";
+	cin >> upp;
+	cout << "\nShape: " << endl << upper(upp);
+	
+	int trapw, traph;
+	cout << "\nEnter width: ";
+	cin >> trapw;
+	cout << "Enter height: ";
+	cin >> traph;
+	cout << "\nShape: " << endl << trapezoid(trapw, traph);
+	
+	int cb3x3w, cb3x3h;
+	cout << "\nEnter width: ";
+	cin >> cb3x3w;
+	cout << "Enter height: ";
+	cin >> cb3x3h;
+	cout << "\nShape: " << endl << checkerboard3x3(cb3x3w, cb3x3h);
+	
+	
+	
 	return 0;
 }
