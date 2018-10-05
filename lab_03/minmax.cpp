@@ -24,9 +24,9 @@ double min_storage(){
 		cerr << "File cannot be opened for reasons." << endl;
 		exit(1); // exit if failed to open the file
 	}
-	string line;
-	getline(fin, line);
-	while(fin >> date >> eastStorage >> eastElevation >> westStorage >> westElevation) {
+	string junk;
+	getline(fin, junk); //reads the first line and stores it in junk
+	while(fin >> date >> eastStorage >> eastElevation >> westStorage >> westElevation) { //reads the file line by line
 		if(eastStorage < min) {
 			min = eastStorage;
 		}
@@ -45,9 +45,9 @@ double max_storage(){
 		cerr << "File cannot be opened for reasons." << endl;
 		exit(1); // exit if failed to open the file
 	}
-	string line;
-	getline(fin, line);	
-	while(fin >> date >> eastStorage >> eastElevation >> westStorage >> westElevation) {
+	string junk;
+	getline(fin, junk); //reads the first line and stores it in junk	
+	while(fin >> date >> eastStorage >> eastElevation >> westStorage >> westElevation) { //reads the file line by line
 		if (max == 0.0) {
 			max = eastStorage;
 			continue;
