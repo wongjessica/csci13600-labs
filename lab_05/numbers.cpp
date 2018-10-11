@@ -1,7 +1,22 @@
 /*	Author: Jessica Wong
 	Course: CSCI-133
 	Instructor: Zamansky
-	Assignment: Lab #5 	*/
+	Assignment: Lab #5
+	Task A:
+	If n is divisible by d, the function should return true, otherwise return false.
+	Task B:
+	Should return true if n is a prime, otherwise return false
+	Task C:
+	Returns the smallest prime greater than n.
+	Task D:
+	Returns the number of prime numbers in the interval a ≤ x ≤ b
+	Task E:
+	Determines whether or not its argument is a twin prime
+	Task F:
+	Returns the smallest twin prime greater than n
+	Task G:
+	Returns the largest twin prime in the range a ≤ N ≤ b, if none, return -1
+*/
 
 #include <iostream>
 #include "numbers.h"
