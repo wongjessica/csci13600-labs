@@ -11,12 +11,12 @@ using std::cin;
 using std::endl;
 
 
-//a
+//Task A
 bool isDivisibleBy(int n, int d){
 	return d != 0 && n % d == 0;
 }
 
-//b
+//Task B
 bool isPrime(int n){
 	if (n <= 1) return false;
 	for (int i = 2; i * i <= n; i++)
@@ -24,7 +24,7 @@ bool isPrime(int n){
 	return true;
 }
 
-//c
+//Task C
 int nextPrime(int n){
 	int i = n + 1;
 	while (!isPrime(i))
@@ -32,7 +32,7 @@ int nextPrime(int n){
 	return i;
 }
 
-//d
+//Task D
 int countPrimes(int a, int b){
 	int cnt = 0;
 	for (int i = a; i <= b; i++)
@@ -40,12 +40,12 @@ int countPrimes(int a, int b){
 	return cnt;
 }
 
-//e
+//Task E
 bool isTwinPrime(int n){
 	return isPrime(n) && (isPrime(n + 2) || isPrime(n - 2));
 }
 
-//f
+//Task F
 int nextTwinPrime(int n){
 	int i = n + 1;
 	while (!isTwinPrime(i))
@@ -53,7 +53,7 @@ int nextTwinPrime(int n){
 	return i;
 }
 
-//g
+//Task G
 int largestTwinPrime(int a, int b){
 	for (int i = b; i > a; i--)
 		if (isTwinPrime(i))
