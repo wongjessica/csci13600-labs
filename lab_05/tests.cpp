@@ -6,18 +6,32 @@ TEST_CASE("Base Cases"){
 	
 }
 
-TEST_CASE("Random Cases"){
-	CHECK(isDivisibleBy(16,8) == true);
-	CHECK(isDivisibleBy(16,9) == false);
-	CHECK(isPrime(7) == true);
-	CHECK(isPrime(9) == false);
-	CHECK(nextPrime(15) == 17);
+TEST_CASE("Arbitrary Cases"){
+	
+	CHECK(isDivisibleBy(100,25) == true);
+	CHECK(isDivisibleBy(35,17) == false);
+	
+	CHECK(isPrime(47) == true);
+	CHECK(isPrime(24) == false);
+	
+	CHECK(nextPrime(14) == 17);
 	CHECK(nextPrime(17) == 19);
+	
 	CHECK(countPrimes(10,17) == 3);
-	CHECK(isTwinPrime(17) == true);
-	CHECK(isTwinPrime(23) == false);
-	CHECK(isTwinPrime(21) == false);
+	
+	CHECK(isTwinPrime(3) == true);
+	CHECK(isTwinPrime(5) == true);
+	CHECK(isTwinPrime(7) == true);
+	CHECK(isTwinPrime(11) == true);
+	CHECK(isTwinPrime(4) == false);
+	CHECK(isTwinPrime(6) == false);
+	CHECK(isTwinPrime(8) == false);
+	CHECK(isTwinPrime(9) == false);
+	
 	CHECK(nextTwinPrime(21) == 29);
-	CHECK(largestTwinPrime(1,31) == 31);
-	CHECK(largestTwinPrime(1,30) == 29);
+	
+	CHECK(largestTwinPrime(1, 31) == 31);
+	CHECK(largestTwinPrime(5, 18) == 17);
+	CHECK(largestTwinPrime(14, 16) == -1);
+
 }
