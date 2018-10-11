@@ -26,26 +26,26 @@ using std::endl;
 
 int main(){
   
-	cout << "isDivisibleBy(27, 3): " << isDivisibleBy(27, 3) << endl;
-	cout << "isDivisibleBy(75, 8): " << isDivisibleBy(75, 8) << endl;
+	cout << "isDivisibleBy(27, 3)== " << isDivisibleBy(27, 3) << endl;
+	cout << "isDivisibleBy(75, 8)== " << isDivisibleBy(75, 8) << endl;
   
-	cout << "isPrime(83): " << isPrime(83) << endl;
-	cout << "isPrime(9): " << isPrime(9) << endl;
+	cout << "isPrime(83)== " << isPrime(83) << endl;
+	cout << "isPrime(9)== " << isPrime(9) << endl;
   
-	cout << "nextPrime(14): " << nextPrime(14) << endl;
-	cout << "nextPrime(17): " << nextPrime(17) << endl;
+	cout << "nextPrime(14)== " << nextPrime(14) << endl;
+	cout << "nextPrime(17)== " << nextPrime(17) << endl;
   
-	cout << "countPrimes(1, 33): " << countPrimes(1, 33) << endl;
+	cout << "countPrimes(1, 33)== " << countPrimes(1, 33) << endl;
   
-	cout << "isTwinPrime(17): " << isTwinPrime(17) << endl;
-	cout << "isTwinPrime(21): " << isTwinPrime(21) << endl;
+	cout << "isTwinPrime(17)== " << isTwinPrime(17) << endl;
+	cout << "isTwinPrime(21)== " << isTwinPrime(21) << endl;
   
-	cout << "nextTwinPrime(17): " << nextTwinPrime(17) << endl;
-	cout << "nextTwinPrime(33): " << nextTwinPrime(33) << endl;
+	cout << "nextTwinPrime(17)== " << nextTwinPrime(17) << endl;
+	cout << "nextTwinPrime(33)== " << nextTwinPrime(33) << endl;
   
-	cout << "largestTwinPrime(5, 18): " << largestTwinPrime(5, 18) << endl;
-	cout << "largestTwinPrime(1, 31): " << largestTwinPrime(1, 31) << endl;
-	cout << "largestTwinPrime(14, 16): " << largestTwinPrime(14, 16) << endl; //should return -1
+	cout << "largestTwinPrime(5, 18)== " << largestTwinPrime(5, 18) << endl;
+	cout << "largestTwinPrime(1, 31)== " << largestTwinPrime(1, 31) << endl;
+	cout << "largestTwinPrime(14, 16)== " << largestTwinPrime(14, 16) << endl; //should return -1
 
 	return 0;
 }
