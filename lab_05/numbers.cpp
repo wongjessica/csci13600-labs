@@ -18,26 +18,35 @@ bool isDivisibleBy(int n, int d){
 
 //Task B
 bool isPrime(int n){
-	if (n <= 1) return false;
-	for (int i = 2; i * i <= n; i++)
-		if (isDivisibleBy(n, i)) return false;
+	if (n <= 1) { 
+		return false; 
+	}
+	for (int i = 2; i * i <= n; i++) {
+		if (isDivisibleBy(n, i)) { 
+			return false; 
+		} 
+	}
 	return true;
 }
 
 //Task C
 int nextPrime(int n){
 	int i = n + 1;
-	while (!isPrime(i))
+	while (!isPrime(i)) {
 		i++;
+	}
 	return i;
 }
 
 //Task D
 int countPrimes(int a, int b){
-	int cnt = 0;
-	for (int i = a; i <= b; i++)
-		if (isPrime(i)) cnt++;
-	return cnt;
+	int count = 0;
+	for (int i = a; i <= b; i++) {
+		if (isPrime(i)) { 
+			count++; 
+		}
+	}
+	return count;
 }
 
 //Task E
