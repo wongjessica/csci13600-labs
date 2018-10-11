@@ -1,3 +1,8 @@
+/*	Author: Jessica Wong
+	Course: CSCI-133
+	Instructor: Zamansky
+	Assignment: Lab #5 	*/
+
 #include <iostream>
 #include "numbers.h"
 
