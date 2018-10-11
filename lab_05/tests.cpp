@@ -28,7 +28,7 @@ TEST_CASE("Arbitrary Cases"){
 	CHECK(isTwinPrime(8) == false);
 	CHECK(isTwinPrime(9) == false);
 	
-	CHECK(nextTwinPrime(21) == 29);
+	CHECK(nextTwinPrime(30) == 31);
 	
 	CHECK(largestTwinPrime(1, 31) == 31);
 	CHECK(largestTwinPrime(5, 18) == 17);
