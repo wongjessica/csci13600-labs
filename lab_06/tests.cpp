@@ -17,13 +17,11 @@ TEST_CASE("Base Cases"){
 	CHECK(decryptVigenere("Hello, World!", "") == "Hello, World!");
 }
 TEST_CASE("Random Tests"){
-	CHECK(encryptCaesar("test", 7) == "alza");
-	CHECK(encryptCaesar("Hello, World!", 12) == "Tqxxa, Iadxp!");
-	CHECK(encryptVigenere("test", "cake") == "vecx");
-	CHECK(encryptVigenere("Hello, World!", "random") == "Yeyoc, Ifryg!");
-	CHECK(decryptCaesar("ithi", 15) == "test");
-	CHECK(decryptCaesar("Czggj, Rjmgy!", 47) == "Hello, World!");
+	CHECK(encryptCaesar("Way to Go!", 5) == "Bfd yt Lt!");
+	CHECK(encryptCaesar("Hello, World!", 10) == "Rovvy, Gybvn!");
+	CHECK(encryptVigenere("Hello, World!", "cake") == "Jevpq, Wyvnd!");
 	CHECK(decryptCaesar("Yvccf, Nficu!", 17) == "Hello, World!");
-	CHECK(decryptVigenere("kikm","rest") == "test");
+	CHECK(decryptCaesar("ithi", 15) == "test");
 	CHECK(decryptVigenere("Aiwpj, Egzzq!", "television") == "Hello, World!");
+	CHECK(decryptVigenere("kikm","rest") == "test");
 }
