@@ -58,7 +58,7 @@ int main() {
   a.push_back(.01974);
   a.push_back(.00074);
   
-  for (int j = 0; j < a.size(); j++){
+  for (int j = 0; j < a.size(); j++) {
 	  
   }	  
  	
