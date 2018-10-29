@@ -78,6 +78,9 @@ int main() {
 			}
 		}			
 	    }	  
+	  /*for (h=0; h < a.size(); h++) {
+	  	
+	  *}/
   }	  
 	return 0;
 
