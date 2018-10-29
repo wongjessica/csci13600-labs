@@ -72,7 +72,7 @@ int main() {
 			if ((97 <= c && c <= 122)) {
 				for (int f = 0; f < a.size(); f++) {
 					if(97+f==c) {
-						occurence[f] += 1;
+						occurrence[f] += 1;
 					}
 				}
 			}
