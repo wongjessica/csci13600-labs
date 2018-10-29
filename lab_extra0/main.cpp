@@ -90,7 +90,6 @@ int main() {
 	}
 }
 cout << "Decrypt shift:: " << 26-decrypt_shift << endl;
-	 for (int shift = 1; shift < 26; shift++)
-         	cout << "shift: " + shift + ", " + decrypt_shift(encrypt, shift)) << endl;
+
 return 0;
 }
