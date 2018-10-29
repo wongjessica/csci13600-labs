@@ -63,8 +63,28 @@ int main() {
   a.push_back(.01974);
   a.push_back(.00074);
   
-  for (int j = 0; j < a.size(); j++) {
-	  
+  int len = 0;
+  string shifted_encrypt = "";
+  for (int j = 1; j < a.size(); j++) {
+	shifted_encrypt = encryptCaesar(encrypt, j);
+	  int occurrence[26];
+	  for (int i = 0; i < shifted_encrypt.length(); i++) {
+		char c = shifted_encrypt.at(int i);
+		if ((97 <= c && c <= 122)) {
+			len++; 
+		}
+		for (int f = 0; f < shifted_encrypt; f++) {
+			if ((97 <= c && c <= 122)) {
+				for (int f = 0; f < a.size(); f++) {
+					if(97+f==c) {
+						occurence[f] += 1;
+					}
+				}
+			}
+		}			
+	    }
+	}	  
   }	  
- 	
+	return 0;
+
 }
