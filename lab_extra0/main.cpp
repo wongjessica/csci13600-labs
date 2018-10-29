@@ -79,4 +79,5 @@ int main() {
 	  	b.push_back(occurrence[h]/len);
 	}
 	return 0;
+  }
 }
