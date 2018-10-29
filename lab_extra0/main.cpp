@@ -2,6 +2,7 @@
 #include <sstream>
 #include <iostream>
 #include <vector>
+#include <math.h>
 
 using std::cout;
 using std::endl;
@@ -26,10 +27,9 @@ string encryptCaesar(string plaintext, int rshift){
 
 int main() {
   string plaintext = "The mitochondria is the powerhouse of the cell.";
-  int shift1 = 13;
+  int shift1 = 18;
   string encrypt = encryptCaesar(plaintext, shift1);
   cout << "Encrypted Message:: " << encrypt << endl;
-  
   vector<float> a;
   a.push_back(.08167);
   a.push_back(.01492);
@@ -58,12 +58,14 @@ int main() {
   a.push_back(.01974);
   a.push_back(.00074);
   
-  int len = 0;
+  int min_chi = 2147483647;
   string shifted_encrypt = "";
+  int decrypt_shift = 0;
   for (int j = 1; j < a.size(); j++) {
+    int len = 0;
     vector<float> b;
 	shifted_encrypt = encryptCaesar(encrypt, j);
-	int occurrence[26];
+	int occurrence[26] = {};
 	for (int i = 0; i < shifted_encrypt.length(); i++) {
 		char c = shifted_encrypt.at(i);
 		if ((97 <= c && c <= 122)) {
@@ -76,8 +78,17 @@ int main() {
 		}
 	  }
 	for (int h=0; h < a.size(); h++) {
-	  	b.push_back(occurrence[h]/len);
+	  	b.push_back((float)occurrence[h]/len);
 	}
-	return 0;
-  }
+	float chi = 0;
+	for (int o = 0; o < a.size(); o++) {
+	    chi += pow(b.at(o)*encrypt.length() - a.at(o)*encrypt.length(),2)/a.at(o)*encrypt.length();
+	}
+	if (chi < min_chi) {
+	    min_chi = chi;
+	    decrypt_shift = j;
+	}
+}
+cout << "Decrypt shift:: " << 26-decrypt_shift << endl;
+return 0;
 }
