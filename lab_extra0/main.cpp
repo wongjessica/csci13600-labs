@@ -65,6 +65,7 @@ int main() {
     int len = 0;
     vector<float> b;
 	shifted_encrypt = encryptCaesar(encrypt, j);
+	cout << shifted_encrypt <<endl;
 	int occurrence[26] = {};
 	for (int i = 0; i < shifted_encrypt.length(); i++) {
 		char c = shifted_encrypt.at(i);
@@ -89,7 +90,8 @@ int main() {
 	    decrypt_shift = j;
 	}
 }
-cout << "Decrypt shift:: " << 26-decrypt_shift << endl;
+// << "Decrypt shift:: " << 26-decrypt_shift << endl;
+	
 
 return 0;
 }
