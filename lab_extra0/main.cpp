@@ -3,6 +3,7 @@
 using std::cout;
 using std::endl;
 using std::string;
+using std::vector;
 
 string encryptCaesar(string plaintext, int rshift){
 	string outp = "";
