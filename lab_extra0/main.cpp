@@ -26,7 +26,9 @@ string encryptCaesar(string plaintext, int rshift){
 int main() {
   string plaintext = "The mitochondria is the powerhouse of the cell.";
   int shift1 = 13;
-  cout << "Encrypted Message:: " << encryptCaesar(plaintext, shift1) << endl;
+  string encrypt = encryptCaesar(plaintext, shift1);
+  cout << "Encrypted Message:: " << encrypt << endl;
+  
   vector<float> a;
   a.push_back(.08167);
   a.push_back(.01492);
