@@ -19,8 +19,13 @@ char shiftChar(char c, int rshift){
 string encryptCaesar(string plaintext, int rshift){
 	string outp = "";
 	for (int i = 0; i < plaintext.length(); i++) {
+<<<<<<< HEAD
 	  outp += shiftChar(plaintext[i], rshift);
         }
+=======
+		outp += shiftChar(plaintext[i], rshift);
+	}
+>>>>>>> 7a88a4577c3f4da4a3d76bf681afd0dd0c885cf0
 	return outp;
 }
 
@@ -58,8 +63,8 @@ int main() {
   a.push_back(.01974);
   a.push_back(.00074);
   
- /* for (int j = 0; j < encrypt.length; j++){
+  for (int j = 0; j < a.size(); j++) {
 	  
   }	  
- */	
+ 	
 }
