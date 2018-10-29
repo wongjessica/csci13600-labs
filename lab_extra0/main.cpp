@@ -1,3 +1,7 @@
+/*
+Jessica Wong
+Lab Extra Credit 0
+*/
 #include <string>
 #include <sstream>
 #include <iostream>
@@ -73,7 +77,7 @@ int main() {
 		if ((97 <= c && c <= 122)) {
 			len++; 
 		}
-		for (int f = 0; f < shifted_encrypt; f++) {
+		for (int f = 0; f < shifted_encrypt.length(); f++) {
 			if ((97 <= c && c <= 122)) {
 				for (int f = 0; f < a.size(); f++) {
 					if(97+f==c) {
@@ -83,7 +87,9 @@ int main() {
 			}
 		}			
 	    }	  
+	  /*for (h=0; h < a.size(); h++) {
+	  	
+	  }*/
   }	  
 	return 0;
-
 }
