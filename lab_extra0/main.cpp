@@ -65,12 +65,13 @@ int main() {
 	for (int i = 0; i < shifted_encrypt.length(); i++) {
 		char c = shifted_encrypt.at(int i);
 		if ((97 <= c && c <= 122)) {
-			len++;
+			len++; 
 		}
 		for (int f = 0; f < shifted_encrypt; f++) {
 			if ((97 <= c && c <= 122)) {
 				
 			}
+		}			
 		}
 	}	  
   }	  
