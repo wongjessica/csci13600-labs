@@ -64,7 +64,7 @@ int main() {
 	shifted_encrypt = encryptCaesar(encrypt, j);
 	  int occurrence[26];
 	  for (int i = 0; i < shifted_encrypt.length(); i++) {
-		char c = shifted_encrypt.at(int i);
+		char c = shifted_encrypt.at(i);
 		if ((97 <= c && c <= 122)) {
 			len++; 
 		}
