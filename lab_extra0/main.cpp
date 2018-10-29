@@ -1,4 +1,7 @@
 #include <iostream>
+
+using std::cout;
+using std::endl;
 using std::string;
 
 string encryptCaesar(string plaintext, int rshift){
@@ -9,6 +12,9 @@ string encryptCaesar(string plaintext, int rshift){
 }
 
 int main() {
+  string plaintext = "The mitochondria is the powerhouse of the cell.";
+  int shift1 = 26;
+  cout << "encryptCaesar: " << encryptCaesar(plaintext, shift1) << endl;
   vector<float> a;
   a.push_back(.08167);
   a.push_back(.01492);
@@ -36,4 +42,6 @@ int main() {
   a.push_back(.00150);
   a.push_back(.01974);
   a.push_back(.00074);
+  
+  
 }
