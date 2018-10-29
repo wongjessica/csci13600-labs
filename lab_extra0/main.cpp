@@ -1,4 +1,12 @@
 #include <iostream>
+using std::string;
+
+string encryptCaesar(string plaintext, int rshift){
+	string outp = "";
+	for (int i = 0; i < plaintext.length(); i++)
+		outp += shiftChar(plaintext[i], rshift);
+	return outp;
+}
 
 int main() {
   vector<float> a;
