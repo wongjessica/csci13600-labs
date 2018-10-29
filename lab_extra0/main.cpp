@@ -60,7 +60,7 @@ int main() {
   
   int len = 0;
   string shifted_encrypt = "";
-  for (int j = 0; j < a.size(); j++) {
+  for (int j = 1; j < a.size(); j++) {
 	shifted_encrypt = encryptCaesar(encrypt, j);
 	for (int i = 0; i < shifted_encrypt.length(); i++) {
 		if ((65 <= c && c <= 90) || (97 <= c && c <= 122)) {
