@@ -58,8 +58,12 @@ int main() {
   a.push_back(.01974);
   a.push_back(.00074);
   
+  string shifted_encrypt = "";
   for (int j = 0; j < a.size(); j++) {
-	  
+	shifted_encrypt+=1;
+	for (int i = 0; i < encrypt.length(); i++) {
+		
+	}	  
   }	  
  	
 }
