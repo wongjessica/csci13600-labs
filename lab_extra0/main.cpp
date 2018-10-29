@@ -75,8 +75,8 @@ int main() {
     		}
 		}
 	  }
-	for (h=0; h < a.size(); h++) {
-	  	b.push_back(occurence[h]/len)
+	for (int h=0; h < a.size(); h++) {
+	  	b.push_back(occurrence[h]/len);
 	}
 	return 0;
 }
