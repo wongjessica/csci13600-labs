@@ -1,6 +1,7 @@
 #include <string>
 #include <sstream>
 #include <iostream>
+#include <vector>
 
 using std::cout;
 using std::endl;
