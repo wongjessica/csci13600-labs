@@ -7,6 +7,14 @@ using std::endl;
 using std::string;
 using std::vector;
 
+char shiftChar(char c, int rshift){
+	if (65 <= c && c <= 90)
+		return (c - 65 + rshift) % 26 + 65;
+	if (97 <= c && c <= 122)
+		return (c - 97 + rshift) % 26 + 97;
+	return c;
+}
+
 string encryptCaesar(string plaintext, int rshift){
 	string outp = "";
 	for (int i = 0; i < plaintext.length(); i++)
