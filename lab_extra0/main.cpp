@@ -104,21 +104,18 @@ int main(){
 	
 	string sentence;
 	
-	// chooses x random words from the large array in words.cpp and puts them into a "sentence"
-	cout << "Generate random sentence: " << endl;
+	cout << "Book Sentence: " << endl << endl;
 	srand (time(0));
-	int x = 10; // sentence length
+	int x = 10; 
 	for (int i = 0; i < x; i++)
 		sentence += words[rand() % 20000] + " ";
 	cout << sentence << endl << endl;
 	
-	// encrypts the "sentence" and prints the result
-	cout << "Encrypted sentence using shift of 5: " << endl;
+	cout << "Encrypted sentence: " << endl << endl;
 	string cipher = encode(sentence, 5);
 	cout << cipher << endl << endl;
 	
-	// decodes the "sentence" using the letter frequencies above and prints the result
-	cout << "Decrypted sentence: " << endl;
+	cout << "Decrypted sentence: " << endl << endl;
 	string decoded = decode(cipher, freqs);
 	cout << decoded << endl;
 	
