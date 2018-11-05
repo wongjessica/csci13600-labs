@@ -1,97 +1,126 @@
-#include <string>
-#include <sstream>
 #include <iostream>
-#include <vector>
+#include <fstream>
+#include <string>
 #include <math.h>
+#include <time.h>
+#include "words.cpp"
 
+using std::string;
 using std::cout;
 using std::endl;
-using std::string;
-using std::vector;
+using std::ifstream;
 
-char shiftChar(char c, int rshift){
-	if (65 <= c && c <= 90)
-		return (c - 65 + rshift) % 26 + 65;
-	if (97 <= c && c <= 122)
-		return (c - 97 + rshift) % 26 + 97;
-	return c;
-}
-
-string encryptCaesar(string plaintext, int rshift){
-	string outp = "";
-	for (int i = 0; i < plaintext.length(); i++) {
-		outp += shiftChar(plaintext[i], rshift);
-	}
-	return outp;
-}
-
-int main() {
-  string plaintext = "The mitochondria is the powerhouse of the cell.";
-  int shift1 = 18;
-  string encrypt = encryptCaesar(plaintext, shift1);
-  cout << "Encrypted Message:: " << encrypt << endl;
-  vector<float> a;
-  a.push_back(.08167);
-  a.push_back(.01492);
-  a.push_back(.02782);
-  a.push_back(.04253);
-  a.push_back(.12702);
-  a.push_back(.02228);
-  a.push_back(.02015);
-  a.push_back(.06094);
-  a.push_back(.06966);
-  a.push_back(.00153);
-  a.push_back(.00772);
-  a.push_back(.04025);
-  a.push_back(.02406);
-  a.push_back(.06749);
-  a.push_back(.07507);
-  a.push_back(.01929);
-  a.push_back(.00095);
-  a.push_back(.05987);
-  a.push_back(.06327);
-  a.push_back(.09056);
-  a.push_back(.02758);
-  a.push_back(.00978);
-  a.push_back(.02360);
-  a.push_back(.00150);
-  a.push_back(.01974);
-  a.push_back(.00074);
-  
-  int min_chi = 2147483647;
-  string shifted_encrypt = "";
-  int decrypt_shift = 0;
-  for (int j = 1; j < a.size(); j++) {
-    int len = 0;
-    vector<float> b;
-	shifted_encrypt = encryptCaesar(encrypt, j);
-	cout << shifted_encrypt <<endl;
-	int occurrence[26] = {};
-	for (int i = 0; i < shifted_encrypt.length(); i++) {
-		char c = shifted_encrypt.at(i);
-		if ((97 <= c && c <= 122)) {
-			len++; 
-    		for (int f = 0; f < a.size(); f++) {
-    			if(97+f==c) {
-    				occurrence[f] += 1;
-    			}
-    		}
+string encode(string s, int r){
+	char c;
+	string result="";
+	for (int i = 0; i < s.length(); ++i) {
+		c = s[i];
+		if (c >= 'a' && c<='z'){
+			c  = c - 'a';
+			c = (c + r)%26;
+			c = c + 'a';
 		}
-	  }
-	for (int h=0; h < a.size(); h++) {
-	  	b.push_back((float)occurrence[h]/len);
+		else if (c >= 'A' && c<='Z'){
+			c  = c - 'A';
+			c = (c + r)%26;
+			c = c + 'A';
+		}
+		result = result + c;
 	}
-	float chi = 0;
-	for (int o = 0; o < a.size(); o++) {
-	    chi += pow(b.at(o)*encrypt.length() - a.at(o)*encrypt.length(),2)/a.at(o)*encrypt.length();
-	}
-	if (chi < min_chi) {
-	    min_chi = chi;
-	    decrypt_shift = j;
-	}
+	return result;
 }
-// << "Decrypt shift:: " << 26-decrypt_shift << endl;
-	
 
-return 0;
+
+double distance(double a[], double b[], int len){
+	double sum = 0;
+	for (int i = 0; i < len; ++i) {
+		sum = sum + (b[i] - a[i]) * (b[i] - a[i]);
+	}
+	return sqrt(sum);
+}
+
+int count_letters(string s, char c){
+	int count = 0;
+	for (int i = 0; i < s.length(); ++i) {
+		if (s[i]==c)
+			count++;
+	}
+	return count;
+}
+
+string decode(string s, double freqs[]){
+	string test_string;
+	int total_letters;
+	double test_vector[26];
+	double min_dist = 1000;
+	double min_index = 0;
+	int i;
+	double d;
+
+	total_letters = s.length();
+	int j = total_letters;
+	for (i = 0; i < j; ++i) {
+		if (s[i]==' ')
+			total_letters--;
+	}
+	for (i = 0; i < 26; ++i) {
+		test_string = encode(s,i);  
+		for (j = 0; j < 26; j++) {
+			d = 1.0*count_letters(test_string,'a'+j) / total_letters;
+			test_vector[j] = d;
+		}
+		double test_distance = distance(freqs,test_vector,26);
+		if (test_distance < min_dist){
+			min_dist = test_distance;
+			min_index = i;
+		}
+	}
+
+	string decoded = encode(s,min_index);
+	return decoded;
+}
+
+// generate array of letter frequencies from book.txt
+double freqs[26];
+
+void count_freqs(){
+	string line;
+	double total_chars = 0.0;
+	for (int i = 0; i < 26; i++)
+		freqs[i] = 0;
+	ifstream file("book.txt");
+	while (file >> line)
+		for (int i = 0; i < 26; i++){
+			int letters = count_letters(line, (65 + i)) + count_letters(line, (97 + i)); // count each letter per line
+			freqs[i] += letters;
+			total_chars += letters;
+		}
+	for (int i = 0; i < 26; i++)
+		freqs[i] *= 100.0 / total_chars;
+}
+
+int main(){
+	count_freqs();
+	
+	string sentence;
+	
+	// chooses x random words from the large array in words.cpp and puts them into a "sentence"
+	cout << "Generate random sentence: " << endl;
+	srand (time(0));
+	int x = 10; // sentence length
+	for (int i = 0; i < x; i++)
+		sentence += words[rand() % 20000] + " ";
+	cout << sentence << endl << endl;
+	
+	// encrypts the "sentence" and prints the result
+	cout << "Encrypted sentence using shift of 5: " << endl;
+	string cipher = encode(sentence, 5);
+	cout << cipher << endl << endl;
+	
+	// decodes the "sentence" using the letter frequencies above and prints the result
+	cout << "Decrypted sentence: " << endl;
+	string decoded = decode(cipher, freqs);
+	cout << decoded << endl;
+	
+	return 0;
 }
