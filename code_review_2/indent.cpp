@@ -30,6 +30,7 @@ int countChar(string line, char c){
 	return cnt;
 }
 
+/*
 // prints each line without leading spaces?
 // why does it include every case for proper indentation?
 void print_unindent2(string filename){
@@ -71,6 +72,17 @@ void print_unindent2(string filename){
 	}
 	else{
 		cout << "File not found!" << endl;
+	}
+}
+*/
+
+void print_unindent2(string filename){
+	ifstream file;
+	file.open(filename);
+	if (!file.fail()){
+		string line;
+		while (getline(file, line))
+			cout << removeLeadingSpaces(line) << endl;
 	}
 }
 
