@@ -1,3 +1,21 @@
+/*
+Author: Jessica Wong
+Course: CSCI-133
+Instructor: Maryash / Zamansky
+Assignment: Lab 8
+
+Creates new files with picture edits of a cat.
+
+A - invert colors
+B - invert colors in the right
+C - add a white box
+D - one pixel thick frame
+E - scale 200%
+F - pixelate
+G - bonus:kernel method image filtering
+
+*/
+
 #include <iostream>
 #include <cassert>
 #include <cstdlib>
