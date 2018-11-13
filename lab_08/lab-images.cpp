@@ -229,7 +229,7 @@ void kernel(int image[MAX_H][MAX_W], int &h, int &w) {
 			}
 		}
 	}
-	writeImage(out, h, w, "task-h");
+	writeImage(out, h, w, "task-g");
 }
 
 int main() {
