@@ -6,5 +6,5 @@ For smaller systems, it would be more difficult to open the code and edit due to
 
 Also, the difficult part I found was the single-letter variables. I did not know what they represented, so I didn't know what to change the variable name to. For example, he made 
 ```string w, after;``` 
-and I did not know what w meant.
+and I did not know what w meant at first. Then I realized that it could mean "word", but I feel as if it could have been more explicit.
 
