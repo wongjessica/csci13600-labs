@@ -9,6 +9,7 @@ Also, the difficult part I found was the single-letter variables. I did not know
 ```string w, after;``` 
 and I did not know what w meant at first. Then I realized that it could mean "word", but I feel as if it could have been more explicit.
 
-Some of his indentation was off for the opening and closing of loops and functions. Fixed those.
+Some of his indentation was off for the opening and closing of loops and functions. This part was really hard to fix because
+the code inside the ```while (getline(fin, line))``` was massive, holding a bunch of if/else statements and while loops. It was essentially a load that was hard to both read and fix.
 
 However I liked some of his comments. One part he commented ```//end of main```. At first I thought it was pointless, but then I realized how useful it actually was: to differentiate the main from the rest of the functions.
