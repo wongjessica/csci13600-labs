@@ -15,3 +15,4 @@ the code inside the ```while (getline(fin, line))``` was massive, holding a bunc
 However I liked some of his comments. One part he commented ```//end of main```. At first I thought it was pointless, but then I realized how useful it actually was: to differentiate the main from the rest of the functions.
 Addition: For some, he did not explicitly state the end of the function. On top of that, the opening and closing brackets
 were not aligned properly, so I was reading code that I thought was still in the method. It was until later that I realized that it was not part of the function.
+Not sure if it was how I extracted the code in a bad way or something, but the intentations and brackets are throwing me off really hard, because they are really off.
