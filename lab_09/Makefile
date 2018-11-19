@@ -1,21 +1,29 @@
 CXXFLAGS=-std=c++11
-main: main.o methods.o
-	g++ -o main main.o methods.o
 
-main.o: main.cpp methods.h
+main: main.o space3d.o particle.o
+	g++ -o main main.o space3d.o particle.o
+	
+main.o: main.cpp
 	g++ $(CXXFLAGS) -c main.cpp
-
-methods.o: methods.cpp methods.h
-	g++ $(CXXFLAGS) -c methods.cpp
-
-poem: poem.cpp
-	g++ -o poem poem.cpp
-
-tests: tests.o methods.o
-	g++ -o tests tests.o methods.o
-
+	
+poem: poem.o
+	g++ -o poem poem.o
+	
+poem.o: poem.cpp func.h
+	g++ $(CXXFLAGS) -c poem.cpp
+	
+tests: tests.o space3d.o particle.o
+	g++ -o tests tests.o space3d.o particle.o
+	
 tests.o: tests.cpp
 	g++ $(CXXFLAGS) -c tests.cpp
-
+	
+space3d.o: space3d.cpp func.h
+	g++ $(CXXFLAGS) -c space3d.cpp
+	
+particle.o: particle.cpp func.h
+	g++ $(CXXFLAGS) -c particle.cpp
+	
+	
 clean:
-	rm -f main.o methods.o tests.o main poem tests
+	rm -f main *.o *.exe
