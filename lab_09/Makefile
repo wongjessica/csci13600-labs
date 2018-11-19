@@ -1,4 +1,3 @@
-
 CXXFLAGS=-std=c++11
 
 main: main.o functions.o
