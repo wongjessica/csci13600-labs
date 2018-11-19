@@ -12,7 +12,7 @@ using std::endl;
 using std::string;
 
 int main(){
-	cout << "Lab 9: Pointers" << endl;
+	cout << "Lab 9: Pointers\n" << endl;
 	Coord3D pointP = {10, 20, 30};
 	Coord3D pointQ = {-20, 21, -22};
 	cout << "length(pointP): " << length(&pointP) << endl << endl;
