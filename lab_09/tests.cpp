@@ -1,137 +1,48 @@
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
-#include "methods.h"
+#include <cstddef>
+#include "func.h"
 
-TEST_CASE("Task A"){
-  SECTION("Valid input"){
-    Coord3D pointP = {2,4,4};
-    CHECK(length(&pointP) == (6));
-  }
+TEST_CASE("Random Cases"){
+	Coord3D coord1 = {3, 4, 12};
+	Coord3D coord2 = {11, 36, 48};
+	Coord3D vel = {1, 2, 3};
+
+	CHECK(length(&coord1) - 13.0 < 0.0000000001);
+	CHECK(length(&coord2) - 61.0 < 0.0000000001);
+
+	CHECK(fartherFromOrigin(&coord1, &coord2) == &coord2);
+
+	move(&coord1, &vel, 5);
+	CHECK(coord1.x == 8);
+	CHECK(coord1.y == 14);
+	CHECK(coord1.z == 27);
+	
+	Coord3D *createC = createCoord3D(7, 8, 9);
+	CHECK(createC->x == 7);
+	CHECK(createC->y == 8);
+	CHECK(createC->z == 9);
+	
+	Particle *createP = createParticle(10, 15, 20, 2, 4, 6);
+	CHECK(createP->x == 10);
+	CHECK(createP->y == 15);
+	CHECK(createP->z == 20);
+	CHECK(createP->vx == 2);
+	CHECK(createP->vy == 4);
+	CHECK(createP->vz == 6);
+	
+	setVelocity(createP, 1, 2, 3);
+	CHECK(createP->vx == 1);
+	CHECK(createP->vy == 2);
+	CHECK(createP->vz == 3);
+	
+	Coord3D checkPos = getPosition(createP);
+	CHECK(checkPos.x == 10);
+	CHECK(checkPos.y == 15);
+	CHECK(checkPos.z == 20);
+	
+	move(createP, 5);
+	CHECK(createP->x == 15);
+	CHECK(createP->y == 25);
+	CHECK(createP->z == 35);
 }
-
-TEST_CASE("Task B"){
-  SECTION("Valid input"){
-    Coord3D p1 = {10, 20, 50};
-    Coord3D p2 = {10, 20, 40};
-
-    Coord3D *p = &p1;
-    Coord3D *q = &p2;
-  
-    Coord3D * ans = fartherFromOrigin(&p1, &p2);
-    CHECK(ans == p);
-  }
-}
-
-TEST_CASE("Task C"){
-  SECTION("Valid input"){
-    Coord3D pos = {0, 0, 100.0};
-    Coord3D vel = {1, -5, 0.2};
-    move(&pos, &vel, 2.0);
-    CHECK(pos.x == 2);
-    CHECK(pos.y == -10);
-    CHECK(pos.z == 100.4);
-  }
-}
-
-TEST_CASE("Task E"){
-  SECTION("Valid input"){
-    Coord3D *ppos = createCoord3D(10,20,30);
-    Coord3D *pvel = createCoord3D(5.5,-1.4,7.77);
-    move(ppos, pvel, 10.0);
-    CHECK((*ppos).x == 65);
-    CHECK((*ppos).y == 6);
-    CHECK((*ppos).z == (*ppos).z);
-    deleteCoord3D(ppos); // release memory
-    deleteCoord3D(pvel);
-  }
-}
-
-TEST_CASE("Task F"){
-  SECTION("Valid input"){
-    Particle *p = createParticle(1.0, 1.5, 2.0, 0.1, 0.2, 0.3);
-    double time = 0.0;
-    double dt = 0.1;
-    while(time < 3.0) {
-      // update its velocity
-      setVelocity(p, 10.0 * time, 0.3, 0.1);
-
-      // move the particle
-      move(p, dt);
-      time += dt;
-    }
-    CHECK((*p).ppos.x == (*p).ppos.x);
-    CHECK((*p).ppos.y == (*p).ppos.y);
-    CHECK((*p).ppos.z == (*p).ppos.z);
-    deleteParticle(p);
-  }
-}
-
-
-#define CATCH_CONFIG_MAIN
-#include "catch.hpp"
-#include "methods.h"
-
-TEST_CASE("Task A"){
-  SECTION("Valid input"){
-    Coord3D pointP = {2,4,4};
-    CHECK(length(&pointP) == (6));
-  }
-}
-
-TEST_CASE("Task B"){
-  SECTION("Valid input"){
-    Coord3D p1 = {10, 20, 50};
-    Coord3D p2 = {10, 20, 40};
-
-    Coord3D *p = &p1;
-    Coord3D *q = &p2;
-  
-    Coord3D * ans = fartherFromOrigin(&p1, &p2);
-    CHECK(ans == p);
-  }
-}
-
-TEST_CASE("Task C"){
-  SECTION("Valid input"){
-    Coord3D pos = {0, 0, 100.0};
-    Coord3D vel = {1, -5, 0.2};
-    move(&pos, &vel, 2.0);
-    CHECK(pos.x == 2);
-    CHECK(pos.y == -10);
-    CHECK(pos.z == 100.4);
-  }
-}
-
-TEST_CASE("Task E"){
-  SECTION("Valid input"){
-    Coord3D *ppos = createCoord3D(10,20,30);
-    Coord3D *pvel = createCoord3D(5.5,-1.4,7.77);
-    move(ppos, pvel, 10.0);
-    CHECK((*ppos).x == 65);
-    CHECK((*ppos).y == 6);
-    CHECK((*ppos).z == (*ppos).z);
-    deleteCoord3D(ppos); // release memory
-    deleteCoord3D(pvel);
-  }
-}
-
-TEST_CASE("Task F"){
-  SECTION("Valid input"){
-    Particle *p = createParticle(1.0, 1.5, 2.0, 0.1, 0.2, 0.3);
-    double time = 0.0;
-    double dt = 0.1;
-    while(time < 3.0) {
-      // update its velocity
-      setVelocity(p, 10.0 * time, 0.3, 0.1);
-
-      // move the particle
-      move(p, dt);
-      time += dt;
-    }
-    CHECK((*p).ppos.x == (*p).ppos.x);
-    CHECK((*p).ppos.y == (*p).ppos.y);
-    CHECK((*p).ppos.z == (*p).ppos.z);
-    deleteParticle(p);
-  }
-}
-
