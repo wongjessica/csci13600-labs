@@ -33,11 +33,11 @@ int main(){
 	//Task C
   cout << "Task C\n" << endl;
 	cout << endl << "Movies: " << endl;
-	Movie movie1 = {"Venom", ACTION, 112};
-	Movie movie2 = {"Halloween", THRILLER, 91};
-	Movie movie3 = {"A Star is Born", DRAMA, 136};
-	Movie movie4 = {"Hocus Pocus", COMEDY, 96};
-	Movie movie5 = {"Hunter Killer", ACTION, 122};
+	Movie movie1 = {"Kimi no Na Wa", ACTION, 112};
+	Movie movie2 = {"Koe no Katachi", THRILLER, 91};
+	Movie movie3 = {"The Notebook", DRAMA, 160};
+	Movie movie4 = {"Descendents", COMEDY, 140};
+	Movie movie5 = {"The Purge", ACTION, 150};
 	TimeSlot movies[5] = {{movie1, {10, 0}}, {movie2, {19, 0}}, \
 	{movie3, {12, 45}}, {movie4, {14, 0}}, {movie5, {16, 15}}};
 	for (int i = 0; i < 5; i++){
@@ -55,7 +55,7 @@ int main(){
 	//Task D
   cout << "Task D\n" << endl;
   int choice;
-	Movie movie6 = {"Avengers: Infinity War", ACTION, 160};
+	Movie movie6 = {"Great Gatsby", ACTION, 160};
 	TimeSlot ts;
 	ts.movie = movie6;
 	cout << endl << "Next movie for movies 1-5: ";
@@ -71,7 +71,7 @@ int main(){
 
 	//Task E
   cout << "Task E\n" << endl;
-	Movie movie7 = {"Deadpool 2", ACTION, 120};
+	Movie movie7 = {"Antman", ACTION, 120};
 	ts.movie = movie7;
 	Time t = {20, 00};
 	ts.startTime = t;
