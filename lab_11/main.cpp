@@ -6,15 +6,15 @@ using std::endl;
 using std::string;
 
 int main(){
-	cout << "Task A" << endl;
+	cout << "Part A:" << endl;
 	cout << printRange(1, 10) << endl;
 	cout << printRange(-2, 10) << endl;
 	cout << printRange(7, 3) << endl;
 
-	cout << endl << "Task B" << endl;
+	cout << endl << "Part B" << endl;
 	cout << sumRange(1, 3) << endl;
 
-	cout << endl << "Task C" << endl;
+	cout << endl << "Part C" << endl;
 	int size = 10;
 	int *arr = new int[size]; // allocate array dynamically
 	arr[0] = 12;
@@ -36,12 +36,12 @@ int main(){
 
 	delete[] arr;         // deallocate it
 
-	cout << endl << "Task D" << endl;
-	cout << isAlphanumeric("ABCD") << endl;        // true (1)
-	cout << isAlphanumeric("Abcd1234xyz") << endl; // true (1)
-	cout << isAlphanumeric("KLMN 8-7-6") << endl;  // false (0)
+	cout << endl << "Part D" << endl;
+	cout << isAlphanumeric("ABCDEFGH") << endl;        // true (1)
+	cout << isAlphanumeric("Abcdefg123456wxyz") << endl; // true (1)
+	cout << isAlphanumeric("KLMNOP 9-8-7") << endl;  // false (0)
 
-	cout << endl << "Task E" << endl;
+	cout << endl << "Part E" << endl;
 	cout << nestedParens("((()))") << endl;      // true (1)
 	cout << nestedParens("()") << endl;          // true (1)
 	cout << nestedParens("") << endl;            // true (1)
@@ -51,8 +51,8 @@ int main(){
 	cout << nestedParens(")(") << endl;          // false (0)
 	cout << nestedParens("a(b)c") << endl;       // false (0)
 
-	cout << endl << "Task F" << endl;
-	int prices [] = {10, 15, 12, 18, 19, 17, 13, 35, 33};
+	cout << endl << "Part F" << endl;
+	int prices [] = {42, 25, 12, 18, 14, 17, 73, 35, 30};
 	cout << divisible(prices, 9) << endl;
 	
 	return 0;
